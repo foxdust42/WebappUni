@@ -1,0 +1,98 @@
+$sans-font-stack: Helvetica, Arial, sans-serif;
+$serif-font-stack: "Times New Roman", "URW Bookman", serif;
+$black: #000;
+$pink: #ff00cc;
+$color-message-accept: #00df00;
+$color-message-error: #dd1111;
+
+
+.btn-blue{
+  background-color: blue;
+  color: white !important;
+  text-decoration: none;
+}
+
+
+.btn-black{
+  background-color: transparent;
+  color: blue;
+  a{
+    color: blue;
+    text-decoration: none;
+  }
+}
+
+#login-container{
+  a{
+    text-decoration: none;
+    color: white;
+    margin-left: 1em;
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+  }
+  button{
+    margin-left: 1em;
+
+  }
+}
+
+.login-form{
+  border: 1px black solid;
+  margin: 1em;
+}
+
+.messages{
+  margin: 0.5em 0.5em 0 0.5em;
+  list-style-type: none;
+  width: auto;
+  padding: 0.5em;
+  li{
+    padding: 0.5em;
+    border-radius: 1em;
+    span{
+      vertical-align: center;
+    }
+    button{
+      float: right;
+    }
+  }
+  .success{
+    background-color: $color-message-accept;
+    color: black;
+  }
+  .error{
+    background-color: $color-message-error;
+    color: black;
+  }
+  .debug{
+    background-color: blueviolet;
+    color: white;
+  }
+}
+
+footer{
+  color: white;
+  .copyright-bar{
+    background-color: black;
+    font-family: $sans-font-stack;
+    font-size: small;
+  }
+}
+
+.main-content{
+  margin: 1em;
+}
+
+.post{
+  border: $color-message-error 1px solid;
+  font-family: $sans-font-stack;
+  margin: 1em;
+}
+
+#new-post-button{
+  color: white;
+}
+
+.new-comment-form{
+  visibility: visible;
+}

@@ -1,0 +1,10 @@
+{% autoescape off %}
+    Hello {{ username }},
+
+    Thank you for joining our service
+
+    Please click the link below to activate your account:
+
+    {{ protocol }}://{{ domain }}{% url 'email_confirm' uidb64=uid token=token %}
+
+{% endautoescape %}

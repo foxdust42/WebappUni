@@ -1,0 +1,70 @@
+.btn-blue {
+  background-color: blue;
+  color: white !important;
+  text-decoration: none; }
+
+.btn-black {
+  background-color: transparent;
+  color: blue; }
+  .btn-black a {
+    color: blue;
+    text-decoration: none; }
+
+#login-container a {
+  text-decoration: none;
+  color: white;
+  margin-left: 1em;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em; }
+
+#login-container button {
+  margin-left: 1em; }
+
+.login-form {
+  border: 1px black solid;
+  margin: 1em; }
+
+.messages {
+  margin: 0.5em 0.5em 0 0.5em;
+  list-style-type: none;
+  width: auto;
+  padding: 0.5em; }
+  .messages li {
+    padding: 0.5em;
+    border-radius: 1em; }
+    .messages li span {
+      vertical-align: center; }
+    .messages li button {
+      float: right; }
+  .messages .success {
+    background-color: #00df00;
+    color: black; }
+  .messages .error {
+    background-color: #dd1111;
+    color: black; }
+  .messages .debug {
+    background-color: blueviolet;
+    color: white; }
+
+footer {
+  color: white; }
+  footer .copyright-bar {
+    background-color: black;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: small; }
+
+.main-content {
+  margin: 1em; }
+
+.post {
+  border: #dd1111 1px solid;
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 1em; }
+
+#new-post-button {
+  color: white; }
+
+.new-comment-form {
+  visibility: visible; }
+
+/*# sourceMappingURL=base_style.css.map */

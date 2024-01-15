@@ -4,13 +4,70 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="041cc599-9950-4b4a-b308-79d89fc632a5" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+    <list default="true" id="041cc599-9950-4b4a-b308-79d89fc632a5" name="Changes" comment="begin static content">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/default_profile.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/profile_pics/Omnissiah_Save_Me.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/profile_pics/Omnissiah_Save_Me_h9jZblH.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/profile_pics/Omnissiah_Save_Me_zsSTMVB.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/profile_pics/amongkill.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/profile_pics/amongkill_KHks62v.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/socialSite/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/socialSite/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/socialSite/migrations/0002_post_is_edited_post_is_mod_altered.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/socialSite/migrations/0003_remove_post_is_mod_altered.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/socialSite/migrations/0004_alter_post_title.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/socialSite/migrations/0005_alter_comment_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/socialSite/migrations/0006_alter_comment_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/socialSite/templates/socialSite/edit_post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/socialSite/templates/socialSite/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/socialSite/templates/socialSite/new_post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/socialSite/templates/socialSite/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/socialSite/templates/socialSite/posts.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/socialSite/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/base_style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/base_style.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/base_style.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/generic_icon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/base.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/show_comment_form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0002_profile_description.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0003_profile_is_public.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0004_profile_date_of_birth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/templates/users/account_activation_email.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/templates/users/js/profile_edit_validation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/templates/users/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/templates/users/password_reset.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/templates/users/password_reset_complete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/templates/users/password_reset_confirm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/templates/users/password_reset_done.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/templates/users/private_profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/templates/users/profile_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/templates/users/profile_view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/templates/users/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/tokens.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/validators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socialSite/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/socialSite/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/socialSite/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/socialSite/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socialSite/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/socialSite/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webAppProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/webAppProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webAppProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/webAppProject/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,15 +81,20 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Python Script" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2a5M5JK9vD9bXwr9ox1oP9dErMt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -41,24 +103,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Django Server.webAppProject.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.webAppProject.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/socialSite/templates/socialSite" />
+      <recent name="$PROJECT_DIR$/users/templates/users" />
+      <recent name="$PROJECT_DIR$/static" />
+      <recent name="$PROJECT_DIR$/static/css" />
+      <recent name="$PROJECT_DIR$/socialSite/templates" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="webAppProject" type="Python.DjangoServer" factoryName="Django server">
       <module name="webAppProject" />
@@ -102,7 +174,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1703603801932</updated>
-      <workItem from="1703603807006" duration="2442000" />
+      <workItem from="1703603807006" duration="2524000" />
+      <workItem from="1703690483937" duration="5565000" />
+      <workItem from="1703790598922" duration="3154000" />
+      <workItem from="1703860407166" duration="11220000" />
+      <workItem from="1703963442744" duration="6218000" />
+      <workItem from="1704137485868" duration="12824000" />
+      <workItem from="1704198457949" duration="13268000" />
+      <workItem from="1704302591511" duration="2457000" />
+      <workItem from="1704456717764" duration="1152000" />
+      <workItem from="1704871282614" duration="1101000" />
+      <workItem from="1704875579466" duration="3734000" />
+      <workItem from="1704880925748" duration="388000" />
+      <workItem from="1704979540789" duration="2378000" />
+      <workItem from="1705307572089" duration="895000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -112,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703603933030</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="begin static content">
+      <option name="closed" value="true" />
+      <created>1703607350459</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703607350459</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,6 +214,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="begin static content" />
+    <option name="LAST_COMMIT_MESSAGE" value="begin static content" />
   </component>
 </project>

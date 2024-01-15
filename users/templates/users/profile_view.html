@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ profile.user.username }}'s profile{% endblock title %}
+
+{% block content %}
+    <div>
+
+    <h1>{{ profile.user.username }}</h1>
+    {% if own %}
+        <a class="btn btn-blue" href="{% url 'profile_edit' %}">Edit Profile</a>
+    {% endif %}
+    </div>
+    <img src="{{ profile.avatar.url }}" alt="{{ profile.user.username }} Profile Picture">
+    {% if profile.date_of_birth is not Null %}
+        <div>
+            Born on: {{ profile.date_of_birth | date:"d/m/Y" }}
+        </div>
+    {% endif %}
+    <div>
+    {{ profile.description }}
+    </div>
+{% endblock content %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Profile Edit{% endblock title %}
+
+{% block optional_script %}
+    <!--<script src="{% static 'js/.js' %}"></script>-->
+{% endblock optional_script %}
+
+{% block content %}
+
+    <form method="post" class="edit-form" id="profile-edit-form" enctype='multipart/form-data'>
+        {% csrf_token %}
+        <h2>Edit Profile</h2>
+        Current Profile Picture:<br>
+        <img src="{{ profile.avatar.url }}" alt="Current profile picture">
+        <hr>
+        <table>
+            <tbody>
+                {% for field in form %}
+                    <tr>
+                        <td>{{ field.label_tag }}</td>
+                        <td>{{ field }}</td>
+                        <td>
+                            {% if field.errors %}
+                                {{ field.errors }}
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div>
+            <input type="submit" value="Edit" class="btn btn-blue" />
+        </div>
+    </form>
+
+{% endblock content %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Social Site:{{ post.title }}{% endblock title %}
+
+{% block optional_script %}<script src="{% static 'js/show_comment_form.js' %}"></script> {% endblock optional_script %}
+
+{% block content %}
+    <h2 class="post-title">{{ post.title }}</h2>
+    <div>
+        <small>By: <a href="{% url 'user_profile' post.user.username %}">{{ post.user }}</a> on {{ post.date_posted | date:"D d M Y" }} on {{ post.date_posted|time:"H:i O" }}</small>
+    {% if post.is_edited %}
+        This post has been edited
+    {% endif %}
+    </div>
+    <div class="post-content">
+        {{ post.content }}
+    </div>
+    {% if request.user.id == post.user.id %}
+        <a class="btn-blue btn" href="{% url 'edit_post' post.id %}">Edit Post</a>
+    {% endif %}
+    <hr class="comment-start" />
+    {% if request.user.is_authenticated %}
+        <button onclick="" role="button" class="btn btn-blue no-highlight">+ Comment</button>
+        <form method="post" class="new-comment-form">
+        {% csrf_token %}
+            {% for field in form %}
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.errors %}
+                    {{ field.errors }}
+                {% endif %}
+                <br/>
+            {% endfor %}
+            <div>
+                <input type="submit" value="Post" class="btn btn-blue" />
+            </div>
+        </form>
+    {% endif %}
+    {% for comment in comments %}
+        <div>
+            <h3>{{ comment.user }}</h3>
+            <small>On {{ comment.date_posted }}</small>
+        <p>
+            {{ comment.content }}
+        </p>
+        </div>
+    {% endfor %}
+{% endblock content %}
