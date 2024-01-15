@@ -22,11 +22,15 @@ def posts(request):
 
 
 def post(request, pk):
+    show_mod = False
+    if request.user.is_authenticated and (
+            request.user.groups.filter(name='Moderator').exists() or request.user.is_superuser):
+        show_mod = True
     if request.method == 'GET':
         this_post = get_object_or_404(Post, id=pk)
         comments = Comment.objects.filter(post=this_post)
         form = NewCommentForm()
-        return render(request, 'socialSite/post.html', {'post': this_post, 'comments': comments, 'form': form}, )
+        return render(request, 'socialSite/post.html', {'post': this_post, 'comments': comments, 'form': form, 'show_mod': show_mod}, )
     if request.method == 'POST':
         this_post = get_object_or_404(Post, id=pk)
         if not request.user.is_authenticated:

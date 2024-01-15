@@ -13,7 +13,7 @@ class LoginForm(forms.Form):
 class RegisterForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ('username', 'email', 'password1', 'password2')  # TODO: Separate user handle and screen name?
+        fields = ('username', 'email', 'password1', 'password2')
 
 
 class ProfileForm(forms.Form):  # Fulfils req for 4 field form (picture, date, description, public)

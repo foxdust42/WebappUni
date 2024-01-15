@@ -15,4 +15,5 @@ urlpatterns = [
     path('my_profile/', views.my_profile, name='my_profile'),
     path('my_profile/edit', views.profile_edit, name='profile_edit'),
     path('user/<username>', views.user_profile, name='user_profile'),
+    path('login/username_validator', views.username_validator, name='username_validator')
 ]

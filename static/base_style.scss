@@ -22,6 +22,10 @@ $color-message-error: #dd1111;
   }
 }
 
+.center-er-div{
+
+}
+
 #login-container{
   a{
     text-decoration: none;
@@ -37,8 +41,45 @@ $color-message-error: #dd1111;
 }
 
 .login-form{
-  border: 1px black solid;
-  margin: 1em;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px black solid;
+  border-radius: 10px;
+  padding: 2em;
+  width: fit-content;
+  input[type="submit"]{
+    margin-top: 0.5em;
+  }
+  #reset-passwd-btn{
+    margin-top: 0.5em;
+  }
+}
+
+.form-organizer{
+
+}
+
+.field_spacer{
+  width: 6em;
+}
+
+.field_label{
+  font-family: $sans-font-stack;
+  font-size: large;
+}
+
+.errorlist{
+  margin-top: 0.5em;
+}
+
+.form_server_error{
+  background-color: $color-message-error;
+  text-decoration: underline;
+
+  border-radius: 5px;
+  padding-left: 1em;
+  margin-top: 0.5em;
 }
 
 .messages{
@@ -84,9 +125,32 @@ footer{
 }
 
 .post{
-  border: $color-message-error 1px solid;
+  border: 3px black solid;
+  border-radius: 10px;
   font-family: $sans-font-stack;
   margin: 1em;
+  padding: 1em;
+  .post-title{
+    font-size: 1.5em;
+  }
+}
+
+.moderator-tools {
+  margin-top: 0.5em;
+  border: 2px $color-message-error solid;
+  border-radius: 10px;
+  padding: 0.5em;
+  width: fit-content;
+  font-size: small;
+
+  .spacer {
+    min-width: 1em;
+    display: inline-block;
+  }
+
+  a {
+    font-size: small;
+  }
 }
 
 #new-post-button{
@@ -95,4 +159,41 @@ footer{
 
 .new-comment-form{
   visibility: visible;
+}
+
+.generic-notif{
+  @extend .login-form;
+  padding: 2em 3em;
+}
+
+.profile-picture{
+  max-width: 500px;
+  max-height: 500px;
+}
+
+.profile-container{
+  margin: auto;
+  border: 3px black solid;
+  border-radius: 10px;
+  padding: 2em;
+  width: max-content;
+  min-width: 50%;
+  max-width: 50%;
+}
+
+#birthday-div{
+  border-bottom: black 2px solid;
+  margin-top: 1em;
+  width: fit-content;
+}
+
+.new-post-form{
+  @extend .login-form;
+}
+
+.post-content{
+  border-left: 3px black solid;
+  padding-left: 1em ;
+  max-width: 35%;
+  word-wrap: break-word;
 }

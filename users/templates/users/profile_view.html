@@ -3,20 +3,29 @@
 {% block title %}{{ profile.user.username }}'s profile{% endblock title %}
 
 {% block content %}
-    <div>
+    <div class="profile-container">
 
     <h1>{{ profile.user.username }}</h1>
-    {% if own %}
-        <a class="btn btn-blue" href="{% url 'profile_edit' %}">Edit Profile</a>
-    {% endif %}
-    </div>
-    <img src="{{ profile.avatar.url }}" alt="{{ profile.user.username }} Profile Picture">
+    <hr>
+
+    <img src="{{ profile.avatar.url }}" alt="{{ profile.user.username }} Profile Picture" class="profile-picture">
     {% if profile.date_of_birth is not Null %}
-        <div>
+        <div id="birthday-div">
             Born on: {{ profile.date_of_birth | date:"d/m/Y" }}
         </div>
     {% endif %}
+    <hr>
     <div>
-    {{ profile.description }}
+    {% if profile.description is None %}
+        <p><i>This user didn't provide a description</i></p>
+    {% else %}
+        <p>{{ profile.description }}</p>
+    {% endif %}
+    </div>
+    {% if own %}
+        <div>
+        <a class="btn btn-blue" href="{% url 'profile_edit' %}">Edit Profile</a>
+        </div>
+    {% endif %}
     </div>
 {% endblock content %}

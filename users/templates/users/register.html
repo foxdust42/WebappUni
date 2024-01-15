@@ -1,25 +1,42 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}Regiester{% endblock title %}
 
+{% block optional_script %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'users/js/registration_validation.js' %}"></script>
+{% endblock optional_script %}
+
 {% block content %}
-    <form method="POST" class="login-form">
+    <form method="POST" class="login-form" >
         {% csrf_token %}
         <h2>Register</h2>
-
-        {% for field in form %}
-	        <p>
-	 	    {{ field.label_tag }} {{ field }}
-            {% if field.errors %}
-		        <ul class="errorlist">
-			        {% for error in field.errors %}
-			            <li>{{ error }}</li>
-			        {% endfor %}
-		        </ul>
-		    {% endif %}
-	        </p>
-	    {% endfor %}
-
-    <input type="submit" value="Sign up"/>
+        <hr>
+        <input type="hidden" id="validator-ref" value="{% url 'username_validator' %}">
+        <table class="form-organizer">
+            <tbody>
+                {% for field in form %}
+                    <tr>
+                        <td class="field_label">
+                            {{ field.label_tag }}
+                        </td>
+                        <td class="field_spacer"></td>
+                        <td class="field_input">
+                            {{ field }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <ul class="errorlist" id="errorlist_{{ field.id_for_label }}">
+			                    {% for error in field.errors %}
+                                    <li class="form_server_error"><b>{{ error }}</b></li>
+			                    {% endfor %}
+		                    </ul>
+                        </td>
+                    </tr>
+	            {% endfor %}
+            </tbody>
+        </table>
+    <input type="submit" class="btn btn-blue" value="Sign up"/>
     </form>
 {% endblock content %}

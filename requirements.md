@@ -6,7 +6,7 @@
 ## Design
 - [X] Styled w/ CSS Sheet
 - [ ] Aesthetically pleasing (No pre-made templates)
-- [ ] Responsive (Adapted to at least 2 resolutions)
+- [X] **?** Responsive (Adapted to at least 2 resolutions)
 ## Users
 - [X] Allows for creating user accounts w/ email confirmation
 - [X] Allows login

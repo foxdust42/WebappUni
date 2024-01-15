@@ -20,9 +20,35 @@
 #login-container button {
   margin-left: 1em; }
 
-.login-form {
-  border: 1px black solid;
-  margin: 1em; }
+.login-form, .new-post-form, .generic-notif {
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px black solid;
+  border-radius: 10px;
+  padding: 2em;
+  width: fit-content; }
+  .login-form input[type="submit"], .new-post-form input[type="submit"], .generic-notif input[type="submit"] {
+    margin-top: 0.5em; }
+  .login-form #reset-passwd-btn, .new-post-form #reset-passwd-btn, .generic-notif #reset-passwd-btn {
+    margin-top: 0.5em; }
+
+.field_spacer {
+  width: 6em; }
+
+.field_label {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: large; }
+
+.errorlist {
+  margin-top: 0.5em; }
+
+.form_server_error {
+  background-color: #dd1111;
+  text-decoration: underline;
+  border-radius: 5px;
+  padding-left: 1em;
+  margin-top: 0.5em; }
 
 .messages {
   margin: 0.5em 0.5em 0 0.5em;
@@ -57,14 +83,58 @@ footer {
   margin: 1em; }
 
 .post {
-  border: #dd1111 1px solid;
+  border: 3px black solid;
+  border-radius: 10px;
   font-family: Helvetica, Arial, sans-serif;
-  margin: 1em; }
+  margin: 1em;
+  padding: 1em; }
+  .post .post-title {
+    font-size: 1.5em; }
+
+.moderator-tools {
+  margin-top: 0.5em;
+  border: 2px #dd1111 solid;
+  border-radius: 10px;
+  padding: 0.5em;
+  width: fit-content;
+  font-size: small; }
+  .moderator-tools .spacer {
+    min-width: 1em;
+    display: inline-block; }
+  .moderator-tools a {
+    font-size: small; }
 
 #new-post-button {
   color: white; }
 
 .new-comment-form {
   visibility: visible; }
+
+.generic-notif {
+  padding: 2em 3em; }
+
+.profile-picture {
+  max-width: 500px;
+  max-height: 500px; }
+
+.profile-container {
+  margin: auto;
+  border: 3px black solid;
+  border-radius: 10px;
+  padding: 2em;
+  width: max-content;
+  min-width: 50%;
+  max-width: 50%; }
+
+#birthday-div {
+  border-bottom: black 2px solid;
+  margin-top: 1em;
+  width: fit-content; }
+
+.post-content {
+  border-left: 3px black solid;
+  padding-left: 1em;
+  max-width: 35%;
+  word-wrap: break-word; }
 
 /*# sourceMappingURL=base_style.css.map */

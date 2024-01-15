@@ -5,14 +5,23 @@
     <form method="post" class="new-post-form">
         {% csrf_token %}
         <h2>Edit Post</h2>
-        {% for field in form %}
-            {{ field.label_tag }}
-            {{ field }}
-            {% if field.errors %}
-                {{ field.errors }}
-            {% endif %}
-            <br/>
-        {% endfor %}
+        <hr>
+        <table class="form-organizer">
+            <tbody>
+                {% for field in form %}
+                    <tr>
+                        <td class="field_label">{{ field.label_tag }}</td>
+                        <td class="field_spacer"></td>
+                        <td class="field_input">{{ field }}</td>
+                        <td>
+                            {% if field.errors %}
+                                {{ field.errors }}
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
         <div>
             <input type="submit" value="Edit Post" class="btn btn-blue" />
         </div>

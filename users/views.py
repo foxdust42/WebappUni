@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.files.storage import default_storage
 from django.core.mail import EmailMessage
+from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout, get_user_model
@@ -48,6 +49,7 @@ def sign_out(request):
 def register(request):
     if request.method == 'GET':
         form = RegisterForm()
+        form['password2'].label = "Confirm password"
         return render(request, 'users/register.html', {'form': form})
 
     if request.method == 'POST':
@@ -64,6 +66,7 @@ def register(request):
             else:
                 return render(request, 'users/register.html', {'form': form})
         else:
+            messages.error(request, "Failed to register")
             return render(request, 'users/register.html', {'form': form})
 
 
@@ -81,7 +84,7 @@ def send_email_confirm(request, user) -> bool:
                             'uid': urlsafe_base64_encode(force_bytes(user.pk)),
                             'token': account_activation_token.make_token(user),
                             'protocol': 'https' if request.is_secure() else 'http'})
-    messages.debug(request, f'{urlsafe_base64_encode(force_bytes(user.pk))}')
+    # messages.debug(request, f'{urlsafe_base64_encode(force_bytes(user.pk))}') ##Testing only
     email = EmailMessage(subject, msg, to=[user.email])
     if email.send():
         messages.success(request, f'Account created for {user.username}; Please verify your email.')
@@ -130,6 +133,8 @@ def profile_edit(request):
                 default_storage.delete(profile.avatar.path)
                 profile.avatar = img
             profile.description = form.cleaned_data['description']
+            if profile.description == "":
+                profile.description = None
             profile.is_public = form.cleaned_data['public']
             profile.date_of_birth = form.cleaned_data['DateOfBirth']
             profile.save()
@@ -146,3 +151,12 @@ def user_profile(request, username):
         return render(request, 'users/profile_view.html', {'own': False, 'profile': profile, 'p_user': profile_user})
     else:
         return render(request, 'users/private_profile.html')
+
+
+# This is used in the ajax call in the registration form, checks for taken usernames
+def username_validator(request):
+    uname = request.GET.get('username', None)
+    response = {
+        'is_taken': User.objects.filter(username=uname).exists()
+    }
+    return JsonResponse(response)

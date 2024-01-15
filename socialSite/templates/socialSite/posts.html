@@ -10,13 +10,18 @@
     <div>
         {% for post in posts %}
             <div class="post">
-                <a href="/posts/{{ post.id }}">{{ post.title }}</a> <small>By: <a href="{% url 'user_profile' post.user.username %}">{{ post.user }}</a> on {{ post.date_posted | date:"d M Y" }}{% if post.is_edited %}<sup>E</sup>{% endif %}</small>
-                <div>
-
-                    {% if show_mod %}
-                        <a href="{% url 'delete_post' post.id %}"><b>DEL</b></a>
-                    {% endif %}
+                <section class="post-title">
+                    <a href="/posts/{{ post.id }}">{{ post.title }}</a>
+                </section>
+                <hr>
+                <div class="post-info">
+                    <small>By: <a href="{% url 'user_profile' post.user.username %}">{{ post.user }}</a> on {{ post.date_posted | date:"d M Y" }}{% if post.is_edited %}<sup>E</sup>{% endif %}</small>
                 </div>
+                {% if show_mod %}
+                    <div class="moderator-tools">
+                        Moderator actions <span class="spacer"></span> <a class="btn btn-blue" href="{% url 'delete_post' post.id %}"><b>Delete Post</b></a>
+                    </div>
+                {% endif %}
             </div>
         {% endfor %}
     </div>

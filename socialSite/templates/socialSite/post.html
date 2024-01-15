@@ -13,11 +13,17 @@
         This post has been edited
     {% endif %}
     </div>
+    <hr>
     <div class="post-content">
-        {{ post.content }}
+        <p>{{ post.content }}</p>
     </div>
-    {% if request.user.id == post.user.id %}
-        <a class="btn-blue btn" href="{% url 'edit_post' post.id %}">Edit Post</a>
+    {% if request.user.id == post.user.id or show_mod %}
+        <div class="moderator-tools">
+            {% if request.user.id == post.user.id %}
+                <a class="btn-blue btn" href="{% url 'edit_post' post.id %}">Edit Post</a>
+            {% endif %}
+                <a class="btn-blue btn" href="{% url 'delete_post' post.id %}">Delete Post</a>
+        </div>
     {% endif %}
     <hr class="comment-start" />
     {% if request.user.is_authenticated %}
