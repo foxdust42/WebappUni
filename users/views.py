@@ -1,10 +1,12 @@
+import os
+
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.files.storage import default_storage
 from django.core.mail import EmailMessage
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse, HttpResponseBadRequest
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout, get_user_model
@@ -160,3 +162,6 @@ def username_validator(request):
         'is_taken': User.objects.filter(username=uname).exists()
     }
     return JsonResponse(response)
+
+
+

@@ -19,6 +19,7 @@
                 {% for field in form %}
                     <tr>
                         <td class="field_label">{{ field.label_tag }}</td>
+                        <td class="field_spacer"></td>
                         <td class="field_input">{{ field }}</td>
                         <td>
                             {% if field.errors %}

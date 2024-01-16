@@ -1,9 +1,16 @@
+from http.client import HTTPResponse
+
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse, HttpResponse, HttpResponseForbidden
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from socialSite.forms import NewPostForm, NewCommentForm
+from rest_framework import status
+from rest_framework.response import Response
+from rest_framework_xml.renderers import XMLRenderer
+
+from socialSite.forms import NewPostForm, NewCommentForm, XMLDownloadForm
 from socialSite.models import Post, Comment
+from .serializers import *
 
 
 # Create your views here.
@@ -30,7 +37,8 @@ def post(request, pk):
         this_post = get_object_or_404(Post, id=pk)
         comments = Comment.objects.filter(post=this_post)
         form = NewCommentForm()
-        return render(request, 'socialSite/post.html', {'post': this_post, 'comments': comments, 'form': form, 'show_mod': show_mod}, )
+        return render(request, 'socialSite/post.html',
+                      {'post': this_post, 'comments': comments, 'form': form, 'show_mod': show_mod}, )
     if request.method == 'POST':
         this_post = get_object_or_404(Post, id=pk)
         if not request.user.is_authenticated:
@@ -44,7 +52,7 @@ def post(request, pk):
             new_comment.save()
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
         else:
-            messages.error(request, "A comment must have content")
+            messages.error(request, "Failed to post comment")
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
@@ -105,3 +113,38 @@ def delete_post(request, pk):
         else:
             messages.error(request, 'You do not have permission to delete this post.')
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+def posts_api(request):
+    if request.method == 'GET':
+        posts_list = Post.objects.all().order_by('-date_posted')
+        serializer = PostSerializer(posts_list, many=True)
+        resp_format = request.GET.get('format', 'json')
+        if resp_format == 'json':
+            return JsonResponse(serializer.data, status=status.HTTP_200_OK, safe=False)
+        if resp_format == 'xml':
+            renderer = XMLRenderer()
+            return HttpResponse(XMLRenderer.render(renderer, data=serializer.data), content_type='application/xml')
+
+
+def post_api(request, pk):
+    if request.method == 'GET':
+        this_post = get_object_or_404(Post, id=pk)
+        comments = Comment.objects.filter(post=this_post)
+        resp_format = request.GET.get('format', 'json')
+        serializer = CommentSerializer(comments, many=True)
+        if resp_format == 'json':
+            return JsonResponse(serializer.data, status=status.HTTP_200_OK, safe=False)
+        if resp_format == 'xml':
+            renderer = XMLRenderer()
+            return HttpResponse(XMLRenderer.render(renderer, data=serializer.data), content_type='application/xml')
+
+
+@login_required()
+def xml_interface(request):
+    if not (request.user.is_authenticated and (
+            request.user.groups.filter(name='Moderator').exists() or request.user.is_superuser)):
+        return HttpResponseForbidden()
+    if request.method == 'GET':
+        form = XMLDownloadForm()
+        return render(request, 'socialSite/XML_Interface.html', {'form': form})

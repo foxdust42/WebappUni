@@ -10,8 +10,8 @@
     {% load sass_tags %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% sass_src 'base_style.scss' %}">
-    <script src="{% static 'js/base.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% sass_src 'base_style.scss' %}">
+    <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
     {% block optional_script %}
     {% endblock optional_script %}
 </head>
@@ -37,8 +37,9 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li><a class="dropdown-item" href="/admin">Admin Panel</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" href="{% url 'posts_api' %}?format=json">Post list api (JSON)</a></li>
+                        <li><a class="dropdown-item" href="{% url 'posts_api' %}?format=xml">Post list api (XML)</a></li>
+                        <li><a class="dropdown-item" href="{% url 'xml_interface' %}">XML Interface</a></li>
                     </ul>
                 </div>
             </li>

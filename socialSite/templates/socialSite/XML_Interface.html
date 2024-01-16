@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin. XML Interface{% endblock title %}
+
+{% block content %}
+        <form method="post" class="edit-form" id="xml-upload-form" enctype='multipart/form-data'>
+        {% csrf_token %}
+        <h2>Upload Posts</h2>
+        <hr>
+        <table class="form-organizer">
+            <tbody>
+                {% for field in form %}
+                    <tr>
+                        <td class="field_label">{{ field.label_tag }}</td>
+                        <td class="field_spacer"></td>
+                        <td class="field_input">{{ field }}</td>
+                        <td>
+                            {% if field.errors %}
+                                {{ field.errors }}
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div>
+            <input type="submit" value="Edit" class="btn btn-blue" />
+            <a role="button" class="btn btn-blue" href="{% url 'posts_api' %}?format=xml">Get XML Data</a>
+        </div>
+    </form>
+{% endblock %}

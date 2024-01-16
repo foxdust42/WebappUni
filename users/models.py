@@ -10,14 +10,14 @@ from .validators import NoFutureDateValidator
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
 
-    description = models.TextField(null=True, max_length=5000 , blank=True, default=None,
+    description = models.TextField(null=True, max_length=5000, blank=True, default=None,
                                    validators=[ProhibitNullCharactersValidator(), MaxLengthValidator(5000)])
 
     avatar = models.ImageField(default='default_profile.jpg', upload_to='profile_pics')
 
     is_public = models.BooleanField(default=False)
 
-    date_of_birth = models.DateField(null=True, blank=True, default=None, validators=[NoFutureDateValidator()])
+    date_of_birth = models.DateField(null=True, blank=True, default=None)
 
     def __str__(self):
         return f'Profile for {self.user.username}'

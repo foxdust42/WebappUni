@@ -3,7 +3,7 @@
 
 {% block title %}Social Site:{{ post.title }}{% endblock title %}
 
-{% block optional_script %}<script src="{% static 'js/show_comment_form.js' %}"></script> {% endblock optional_script %}
+{% block optional_script %}<script type="text/javascript" src="{% static 'socialSite/js/show_comment_form.js' %}"></script> {% endblock optional_script %}
 
 {% block content %}
     <h2 class="post-title">{{ post.title }}</h2>
@@ -27,26 +27,37 @@
     {% endif %}
     <hr class="comment-start" />
     {% if request.user.is_authenticated %}
-        <button onclick="" role="button" class="btn btn-blue no-highlight">+ Comment</button>
-        <form method="post" class="new-comment-form">
+        <button onclick="toggle_comment_form()" onload="comment_form_loaded()" id="comment-form-button" role="button" class="btn btn-blue no-highlight">+ Comment</button>
+        <div id="comment-form-wrapper">
+        <form method="post" id="comment-form" class="new-comment-form">
         {% csrf_token %}
-            {% for field in form %}
-                {{ field.label_tag }}
-                {{ field }}
-                {% if field.errors %}
-                    {{ field.errors }}
-                {% endif %}
-                <br/>
-            {% endfor %}
+            <table class="form-organizer">
+                <tbody>
+                    {% for field in form %}
+                        <tr>
+                            <td class="field_label">{{ field.label_tag }}</td>
+                            <td class="field_spacer"></td>
+                            <td class="field_input">{{ field }}</td>
+                            <td>
+                                {% if field.errors %}
+                                    {{ field.errors }}
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
             <div>
                 <input type="submit" value="Post" class="btn btn-blue" />
             </div>
         </form>
+        </div>
+    <hr>
     {% endif %}
+
     {% for comment in comments %}
-        <div>
-            <h3>{{ comment.user }}</h3>
-            <small>On {{ comment.date_posted }}</small>
+        <div class="comment">
+            By: <a href="{% url 'user_profile' comment.user %}">{{ comment.user }}</a> &nbsp; <small>On {{ comment.date_posted }}</small>
         <p>
             {{ comment.content }}
         </p>

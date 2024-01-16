@@ -4,9 +4,30 @@
     HOME
 {% endblock title %}
 {% block content %}
+    <section class="main-sec">
+        <h1>
+            Generic Header
+        </h1>
+        <hr>
+        <p class="main-para">
+            {% lorem 100 w %}
+        </p>
+    </section>
+    <section class="main-sec">
+    <h2>
+        We don't steal your data<sup>*</sup>
+    </h2>
+        <hr/>
     <p>
-        Generic text
-        <div style="height: 3em">LOL
-        </div>
+        {% lorem 400 w %}
     </p>
+    </section>
+    <section class="main-sec">
+        <h3>Something else</h3>
+    <hr/>
+    <p>
+        {% lorem 4 b %}
+    </p>
+
+    </section>
 {% endblock content %}
