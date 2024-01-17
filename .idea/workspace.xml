@@ -4,28 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43ee14d9-841c-4a46-986e-03dff09b4455" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webAppProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webAppProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="43ee14d9-841c-4a46-986e-03dff09b4455" name="Changes" comment="last update">
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/localhost.crt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/localhost.key" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialSite/templates/socialSite/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/socialSite/templates/socialSite/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/base_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/base_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/base_style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/base_style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/base_style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/base_style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_backup/base_style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static_backup/base_style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/templates/users/profile_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/profile_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/templates/users/profile_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/profile_view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webAppProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/webAppProject/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,11 +94,24 @@
       <workItem from="1705416084239" duration="857000" />
       <workItem from="1705421169108" duration="8323000" />
       <workItem from="1705437133362" duration="2749000" />
-      <workItem from="1705476226241" duration="1493000" />
+      <workItem from="1705476226241" duration="2014000" />
     </task>
+    <task id="LOCAL-00001" summary="last update">
+      <option name="closed" value="true" />
+      <created>1705477754676</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1705477754676</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="last update" />
+    <option name="LAST_COMMIT_MESSAGE" value="last update" />
   </component>
 </project>

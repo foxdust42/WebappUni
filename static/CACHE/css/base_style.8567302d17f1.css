@@ -1,0 +1,215 @@
+/* line 9, static/base_style.scss */
+.btn-blue {
+  background-color: blue;
+  color: white !important;
+  text-decoration: none; }
+
+/* line 16, static/base_style.scss */
+.btn-black {
+  background-color: transparent;
+  color: blue; }
+  /* line 19, static/base_style.scss */
+  .btn-black a {
+    color: blue;
+    text-decoration: none; }
+
+/* line 26, static/base_style.scss */
+#login-container a {
+  text-decoration: none;
+  color: white;
+  margin-left: 1em;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em; }
+
+/* line 33, static/base_style.scss */
+#login-container button {
+  margin-left: 1em; }
+
+/* line 39, static/base_style.scss */
+.login-form, .edit-form, .new-post-form, .generic-notif {
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px black solid;
+  border-radius: 10px;
+  padding: 2em;
+  width: fit-content; }
+  /* line 47, static/base_style.scss */
+  .login-form input[type="submit"], .edit-form input[type="submit"], .new-post-form input[type="submit"], .generic-notif input[type="submit"] {
+    margin-top: 0.5em; }
+
+/* line 52, static/base_style.scss */
+#reset-passwd-btn {
+  margin-top: 0.5em; }
+
+/* line 57, static/base_style.scss */
+.field_spacer {
+  width: 6em; }
+
+/* line 61, static/base_style.scss */
+.field_label {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: large; }
+
+/* line 66, static/base_style.scss */
+.errorlist {
+  margin-top: 0.5em; }
+
+/* line 70, static/base_style.scss */
+.form_server_error {
+  background-color: #dd1111;
+  text-decoration: underline;
+  border-radius: 5px;
+  padding-left: 1em;
+  margin-top: 0.5em; }
+
+/* line 79, static/base_style.scss */
+.messages {
+  margin: 0.5em 0.5em 0 0.5em;
+  list-style-type: none;
+  width: auto;
+  padding: 0.5em; }
+  /* line 84, static/base_style.scss */
+  .messages li {
+    padding: 0.5em;
+    border-radius: 1em; }
+    /* line 87, static/base_style.scss */
+    .messages li span {
+      vertical-align: center; }
+    /* line 90, static/base_style.scss */
+    .messages li button {
+      float: right; }
+  /* line 94, static/base_style.scss */
+  .messages .success {
+    background-color: #00df00;
+    color: black; }
+  /* line 98, static/base_style.scss */
+  .messages .error {
+    background-color: #dd1111;
+    color: black; }
+  /* line 102, static/base_style.scss */
+  .messages .debug {
+    background-color: blueviolet;
+    color: white; }
+
+/* line 108, static/base_style.scss */
+footer {
+  color: white; }
+  /* line 110, static/base_style.scss */
+  footer .copyright-bar {
+    background-color: black;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: small; }
+
+/* line 117, static/base_style.scss */
+.main-content {
+  margin: 1em; }
+
+/* line 121, static/base_style.scss */
+.post {
+  border: 3px black solid;
+  border-radius: 10px;
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 1em;
+  padding: 1em; }
+  /* line 127, static/base_style.scss */
+  .post .post-title {
+    font-size: 1.5em; }
+
+/* line 131, static/base_style.scss */
+.post-title {
+  word-wrap: break-word;
+  max-width: 100%; }
+
+/* line 135, static/base_style.scss */
+.moderator-tools {
+  margin-top: 0.5em;
+  border: 2px #dd1111 solid;
+  border-radius: 10px;
+  padding: 0.5em;
+  width: fit-content;
+  font-size: small; }
+  /* line 143, static/base_style.scss */
+  .moderator-tools .spacer {
+    min-width: 1em;
+    display: inline-block; }
+  /* line 148, static/base_style.scss */
+  .moderator-tools a {
+    font-size: small; }
+
+/* line 153, static/base_style.scss */
+#new-post-button {
+  color: white; }
+
+/* line 157, static/base_style.scss */
+.new-comment-form {
+  visibility: visible; }
+
+/* line 161, static/base_style.scss */
+.generic-notif {
+  padding: 2em 3em; }
+
+/* line 166, static/base_style.scss */
+.profile-picture {
+  max-width: 500px;
+  max-height: 500px; }
+
+/* line 171, static/base_style.scss */
+.profile-container {
+  margin: auto;
+  border: 3px black solid;
+  border-radius: 10px;
+  padding: 2em;
+  width: max-content;
+  min-width: 50%;
+  max-width: 50%; }
+
+/* line 181, static/base_style.scss */
+#birthday-div {
+  border-bottom: black 2px solid;
+  margin-top: 1em;
+  width: fit-content; }
+
+/* line 191, static/base_style.scss */
+.post-content {
+  border-left: 3px black solid;
+  padding-left: 1em;
+  width: 35%;
+  min-width: 20em;
+  word-wrap: break-word; }
+
+/* line 199, static/base_style.scss */
+.edit-form {
+  width: fit-content; }
+  /* line 203, static/base_style.scss */
+  .edit-form div:last-child a {
+    margin-top: 0.5em; }
+
+/* line 209, static/base_style.scss */
+.comment {
+  border-bottom: 2px black solid;
+  width: 30%;
+  min-width: 20em;
+  max-width: 30%;
+  margin-bottom: 1em; }
+  /* line 215, static/base_style.scss */
+  .comment p {
+    margin-top: 0.5em;
+    word-wrap: break-word; }
+
+/* line 222, static/base_style.scss */
+.main-sec h1, .main-sec h2, .main-sec h3, .main-sec h4, .main-sec h5, .main-sec h6 {
+  font-family: Helvetica, Arial, sans-serif; }
+
+/* line 225, static/base_style.scss */
+.main-sec hr {
+  max-width: 60%; }
+
+/* line 228, static/base_style.scss */
+.main-sec p {
+  font-family: "Times New Roman", "URW Bookman", serif;
+  max-width: 60%; }
+
+/* line 234, static/base_style.scss */
+div .main-sec:not(:first-child) {
+  margin-top: 3em; }
