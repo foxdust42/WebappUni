@@ -8,10 +8,15 @@
     <h1>{{ profile.user.username }}</h1>
     <hr>
 
-    <img src="{{ profile.avatar.url }}" alt="{{ profile.user.username }} Profile Picture" class="profile-picture">
+   <!-- <img src="{{ profile.avatar.url }}" alt="{{ profile.user.username }} Profile Picture" class="profile-picture"> -->
     {% if profile.date_of_birth is not Null %}
         <div id="birthday-div">
             Born on: {{ profile.date_of_birth | date:"d/m/Y" }}
+        </div>
+    {% endif %}
+    {% if profile.webpage is not Null %}
+        <div id="link-div">
+            Personal Link: <a href="{{ profile.webpage }}">{{ profile.webpage }}</a>
         </div>
     {% endif %}
     <hr>

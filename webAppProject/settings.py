@@ -20,10 +20,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-c*ldub6gkrq&3q@&wym9rp2ujub1l7gaw88l=pi34@v%-!wa2a'
-
+# SECRET_KEY = 'django-insecure-c*ldub6gkrq&3q@&wym9rp2ujub1l7gaw88l=pi34@v%-!wa2a'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-c*ldub6gkrq&3q@&wym9rp2ujub1l7gaw88l=pi34@v%-!wa2a')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv('DJANGO_DEBUG', False)
 
 ALLOWED_HOSTS = ['*']
 
@@ -128,9 +128,12 @@ STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'sass_processor.finders.CssFinder',
+    'compressor.finders.CompressorFinder',
 ]
 
-SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'static')
+SASS_PROCESSOR_INCLUDE_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -146,7 +149,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 PASSWORD_RESET_TIMEOUT = 60 * 60 * 8  # 8 hours
 
-MESSAGE_LEVEL = message_constants.DEBUG
+MESSAGE_LEVEL = message_constants.INFO
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': (
@@ -158,3 +161,7 @@ REST_FRAMEWORK = {
         'rest_framework_xml.parsers.XMLParser',
     ),
 }
+
+SASS_PRECISION = 8
+
+SASS_PROCESSOR_ENABLED = True

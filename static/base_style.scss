@@ -184,6 +184,11 @@ footer{
   width: fit-content;
 }
 
+#link-div{
+  margin-top: 1em;
+  width: fit-content;
+}
+
 .new-post-form{
   @extend .login-form;
 }

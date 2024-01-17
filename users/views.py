@@ -124,7 +124,7 @@ def profile_edit(request):
     profile = get_object_or_404(Profile, user=request.user)
     if request.method == 'GET':
         form = ProfileForm(initial={'profile': profile.avatar, 'description': profile.description,
-                                    'public': profile.is_public, 'DateOfBirth': profile.date_of_birth})
+                                    'public': profile.is_public, 'DateOfBirth': profile.date_of_birth, 'webpage': profile.webpage})
         return render(request, 'users/profile_edit.html', {'form': form, 'profile': profile})
 
     if request.method == 'POST':
@@ -139,6 +139,8 @@ def profile_edit(request):
                 profile.description = None
             profile.is_public = form.cleaned_data['public']
             profile.date_of_birth = form.cleaned_data['DateOfBirth']
+            profile.webpage = form.cleaned_data['webpage']
+            print(profile.webpage)
             profile.save()
             messages.success(request, 'Profile updated successfully')
             return redirect('my_profile')

@@ -15,6 +15,9 @@ class Profile(models.Model):
 
     avatar = models.ImageField(default='default_profile.jpg', upload_to='profile_pics')
 
+    webpage = models.URLField(null=True, default=None, blank=True, max_length=500,
+                              validators=[ProhibitNullCharactersValidator(), MaxLengthValidator(500)])
+
     is_public = models.BooleanField(default=False)
 
     date_of_birth = models.DateField(null=True, blank=True, default=None)

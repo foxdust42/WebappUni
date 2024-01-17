@@ -17,11 +17,12 @@ class RegisterForm(UserCreationForm):
 
 
 class ProfileForm(forms.Form):  # Fulfils req for 4 field form (picture, date, description, public)
-    profile_picture = forms.ImageField(required=False, label='Profile Picture',
-                                       validators=[validate_image_file_extension])
+    # profile_picture = forms.ImageField(required=False, label='Profile Picture', validators=[validate_image_file_extension])
     description = forms.CharField(widget=forms.Textarea, required=False, validators=[ProhibitNullCharactersValidator(),
                                                                                      MaxLengthValidator(5000)])
     public = forms.BooleanField(required=False)
     DateOfBirth = forms.DateField(required=False, widget=forms.DateInput(attrs={'type': 'date'}),
                                   validators=[NoFutureDateValidator()],
                                   label='Date of Birth')
+    webpage = forms.URLField(required=False, widget=forms.URLInput(), max_length=500, label='Your Own Website',
+                             validators=[ProhibitNullCharactersValidator(), MaxLengthValidator(500)])
